@@ -17,7 +17,7 @@ export default function HeroSection() {
         <div className="absolute w-full h-full bg-gradient-to-t from-[#ffffff] to-[#1111114b] to-50%" />
         {/* content  */}
         <div className="z-10 flex flex-col w-full h-full items-center justify-center text-white text-center">
-          <div className="flex items-center">
+          <div className="flex gap-1 items-center">
             <Image src={"/logo.png"} alt="Logo" width={50} height={50} />
             <h1 className="text-xl font-semibold">
               WELCOME TO US PRIME PROPERTIES
