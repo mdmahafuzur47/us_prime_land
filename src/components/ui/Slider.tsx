@@ -28,10 +28,10 @@ export default function Slider({ children }: { children: any }) {
         slidesPerView={6}
         spaceBetween={10}
         autoplay={{
-          delay: 1000,
+          delay: 800,
           disableOnInteraction: false,
         }}
-        speed={2000}
+        speed={1800}
         pagination={{
           clickable: true,
         }}
