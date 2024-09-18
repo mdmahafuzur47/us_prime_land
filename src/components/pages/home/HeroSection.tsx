@@ -49,7 +49,7 @@ export default function HeroSection() {
       </div>
 
       {/* text arrow  */}
-      <Container className="mt-2 sm:mt-0" >
+      <Container className="" >
       <Image 
         src={"/US PRIME PROPERTIES.png"}
         alt="US PRIME PROPERTIES"
