@@ -1,3 +1,5 @@
+import AboutOurPrimeProperties from "@/components/pages/home/AboutOurPrimeProperties";
+import FeaturedProperties from "@/components/pages/home/FeaturedProperties";
 import HeroSection from "@/components/pages/home/HeroSection";
 import HowItWorks from "@/components/pages/home/HowItWorks";
 import PropertiesLocation from "@/components/pages/home/PropertiesLocation";
@@ -10,6 +12,8 @@ export default function Home() {
     <div>
       <HeroSection />
       <PropertyTypes />
+      <FeaturedProperties />
+      <AboutOurPrimeProperties />
       <HowItWorks />
       <WhyChooseUs />
       <PropertiesLocation />

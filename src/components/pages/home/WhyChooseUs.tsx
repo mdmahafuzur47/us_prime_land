@@ -117,8 +117,9 @@ export default function WhyChooseUs() {
 
 const CTA = () => {
   return (
-    <Container className="mt-20 w-full items-center bg-secondary flex justify-between px-16 py-10 rounded-2xl shadow-md gap-10">
-      <div className="flex-1">
+    <Container>
+     <div className="mt-20 w-full items-center bg-secondary flex justify-between rounded-2xl shadow-md gap-10 px-16 py-10">
+     <div className="flex-1">
         <h1 className="text-myBlue text-4xl font-semibold">
           Need Help? Talk to Our Expert.
         </h1>
@@ -137,6 +138,7 @@ const CTA = () => {
           Subscribe
         </button>
       </div>
+     </div>
     </Container>
   );
 };
