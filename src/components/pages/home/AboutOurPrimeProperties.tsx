@@ -14,7 +14,7 @@ export default function AboutOurPrimeProperties() {
             alt="logo"
             width={250}
             height={180}
-            className="absolute object-cover top-0 left-0 w-[250px]"
+            className="absolute object-cover top-0 left-0 w-[150px] md:w-[250px]"
           />
           <Image
             src={"/aboutOur/Rectangle 57.png"}
@@ -28,7 +28,7 @@ export default function AboutOurPrimeProperties() {
             alt="logo"
             width={250}
             height={180}
-            className="w-[200px] md:w-[250px] object-cover absolute bottom-5 lg:-bottom-8 left-0"
+            className="w-[150px] md:w-[250px] object-cover absolute bottom-5 lg:-bottom-8 left-0"
           />
         </div>
         <div className="flex-1">
