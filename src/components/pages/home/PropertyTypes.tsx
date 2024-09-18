@@ -57,8 +57,8 @@ const PropertyCard = () => {
           />
         </div>
       </div>
-      <h1 className="text-xl mt-3 mb-1 font-semibold text-white">Ranches</h1>
-      <p className="text-gray-200">42 Properties</p>
+      <h1 className="md:text-xl mt-3 mb-1 font-semibold text-white">Ranches</h1>
+      <p className="text-gray-200 text-sm md:text-md">42 Properties</p>
     </div>
   );
 };

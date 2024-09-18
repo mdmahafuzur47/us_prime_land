@@ -42,12 +42,12 @@ export default function Slider({ children }: { children: any }) {
         breakpoints={{
           320: {
             slidesPerView: 2,
-            spaceBetween: 10,
+            spaceBetween: 5,
           },
 
           480: {
             slidesPerView: 2,
-            spaceBetween: 10,
+            spaceBetween: 5,
           },
 
           640: {
