@@ -28,7 +28,7 @@ export default function AboutOurPrimeProperties() {
             alt="logo"
             width={250}
             height={180}
-            className="w-[230px] md:w-[250px] object-cover absolute bottom-5 lg:-bottom-8 left-0"
+            className="w-[200px] md:w-[250px] object-cover absolute bottom-5 lg:-bottom-8 left-0"
           />
         </div>
         <div className="flex-1">
