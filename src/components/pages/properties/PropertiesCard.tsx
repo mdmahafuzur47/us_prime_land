@@ -10,7 +10,7 @@ export default function PropertiesCard() {
         alt="blog"
         width={300}
         height={250}
-        className='h-[200px]'
+        className='h-[200px] w-full'
       />
       <div className='px-5 py-2'>
         <div className='flex justify-between mb-2 items-center'>

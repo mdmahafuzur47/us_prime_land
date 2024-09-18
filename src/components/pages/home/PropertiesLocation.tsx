@@ -4,14 +4,14 @@ import React from "react";
 
 export default function PropertiesLocation() {
   return (
-    <div className="bg-[#9fdbff] py-20 mt-20 mx-5 rounded-lg">
+    <div className="bg-[#9fdbff] py-20 mt-20 mx-1 md:mx-5 rounded-lg">
       <Container className="flex flex-col items-center justify-center">
         <CommonHeader title="LOCATION" />
-        <h1 className="text-4xl mb-10 mt-3 font-semibold">
+        <h1 className="text-2xl md:text-4xl mb-10 mt-3 font-semibold">
           Properties by Cities
         </h1>
 
-        <div className="w-full grid grid-cols-4 gap-5">
+        <div className="w-full grid md:grid-cols-2 xl:grid-cols-4 gap-5">
           <PropertiesCard />
           <PropertiesCard />
           <PropertiesCard />

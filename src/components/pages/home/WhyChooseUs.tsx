@@ -7,10 +7,10 @@ import React from "react";
 export default function WhyChooseUs() {
   return (
     <>
-      <Container className="mt-20 flex gap-8">
+      <Container className="mt-20 flex lg:flex-row flex-col items-center gap-8">
         <div className="flex-1">
           <CommonHeader title="WHY CHOOSE US" />
-          <h1 className="text-5xl mb-5 mt-3 font-semibold">
+          <h1 className="text-3xl md:text-5xl mb-5 mt-3 font-semibold">
             Let&apos;s Find the Right Selling Option for you
           </h1>
           <p>
@@ -118,18 +118,18 @@ export default function WhyChooseUs() {
 const CTA = () => {
   return (
     <Container>
-     <div className="mt-20 w-full items-center bg-secondary flex justify-between rounded-2xl shadow-md gap-10 px-16 py-10">
+     <div className="mt-20 w-full items-center bg-secondary flex md:flex-row flex-col justify-between rounded-2xl shadow-md gap-3 sm:gap-5 lg:gap-10 px-16 py-10">
      <div className="flex-1">
-        <h1 className="text-myBlue text-4xl font-semibold">
+        <h1 className="text-myBlue text-center md:text-start  sm:text-2xl lg:text-4xl font-semibold">
           Need Help? Talk to Our Expert.
         </h1>
-        <p className="mt-2">
+        <p className="mt-2 text-sm lg:text-md text-center md:text-start">
           Placerat lacus, at hendrerit faucibus urna. dui. amet, felis, elit.
           Lorem non. Lorem massa viverra ipsum Ut placerat sodales. Nunc
           placerat odio vitae fringilla lorem.
         </p>
       </div>
-      <div className="flex gap-5">
+      <div className="flex items-center flex-col sm:flex-row gap-2 sm:gap-5">
         <div className="flex gap-2 items-center rounded-md ring-2 px-4 py-2 bg-white ">
           <PhoneCallIcon className="text-xl" />
           <p className="font-medium text-gray-600">(941) 284-9653</p>

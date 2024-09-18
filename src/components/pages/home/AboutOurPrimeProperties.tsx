@@ -7,33 +7,33 @@ import React from "react";
 export default function AboutOurPrimeProperties() {
   return (
     <Container className="mt-20 mb-40">
-      <div className="flex gap-5">
-        <div className="relative flex-1">
+      <div className="flex lg:flex-row flex-col items-center gap-14 xl:gap-5">
+        <div className="relative overflow-hidden lg:overflow-visible flex-1">
           <Image
             src={"/aboutOur/logo-logo.png"}
             alt="logo"
             width={250}
             height={180}
-            className="absolute top-0 left-0"
+            className="absolute object-cover top-0 left-0 w-[250px]"
           />
           <Image
             src={"/aboutOur/Rectangle 57.png"}
             alt="logo"
             width={450}
             height={500}
-            className="w-[480px] relative top-14 left-28"
+            className="w-[480px] object-cover relative top-14 left-28"
           />
           <Image
             src={"/aboutOur/Rectangle 58.png"}
             alt="logo"
             width={250}
             height={180}
-            className="absolute -bottom-8 left-0"
+            className="w-[230px] md:w-[250px] object-cover absolute bottom-5 lg:-bottom-8 left-0"
           />
         </div>
         <div className="flex-1">
           <CommonHeader title="About US PRIME PROPERTIES" />
-          <h1 className="text-5xl mb-5 mt-3 font-semibold">
+          <h1 className="text-3xl md:text-5xl mb-5 mt-3 font-semibold">
             The Leading Real Estate About Marketplace.
           </h1>
           <p>
@@ -43,7 +43,7 @@ export default function AboutOurPrimeProperties() {
             vitae elit. sed diam tincidunt lobortis,{" "}
           </p>
 
-          <div className="mt-8 grid grid-cols-2 gap-5">
+          <div className="mt-8 grid md:grid-cols-2 gap-5">
             <div className="flex items-center gap-3">
               <div className="bg-primary text-white p-2 rounded-full text-xl">
                 <HomeSearchIcon />

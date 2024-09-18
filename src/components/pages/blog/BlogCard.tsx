@@ -10,6 +10,7 @@ export default function BlogCard() {
         alt="blog"
         width={300}
         height={200}
+        className='w-full'
       />
       <div className='px-5 py-2'>
         <p className='mb-3 text-sm'>July 1,2024</p>

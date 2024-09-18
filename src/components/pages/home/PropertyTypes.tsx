@@ -7,10 +7,10 @@ import { SwiperSlide } from "swiper/react";
 
 export default function PropertyTypes() {
   return (
-    <div>
+    <div className="mx-1">
       <Container className="mt-20 flex flex-col justify-center items-center">
         <CommonHeader title="Property types" />
-        <h1 className="text-4xl mb-10 mt-3 font-semibold">
+        <h1 className="text-2xl text-center md:text-4xl mb-10 mt-3 font-semibold">
           Explore Properties Types
         </h1>
       </Container>

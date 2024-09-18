@@ -4,7 +4,7 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon, LocationIcon, PhoneCallIcon,
 
 export default function TopNavBar() {
   return (
-    <Container className="flex justify-between items-center">
+    <Container className="flex md:flex-row flex-col justify-between items-center">
     {/* icons  */}
     <div className="flex gap-2 py-3">
       <FacebookIcon className="text-[17.5px] text-blue-700"/>
@@ -14,7 +14,7 @@ export default function TopNavBar() {
       <LinkedinIcon />
     </div>
     {/* address and location  */}
-    <div className="text-[15px] flex gap-8 items-center">
+    <div className="text-[15px] flex sm:flex-row flex-col gap-1 sm:gap-8 items-center">
       <div className="text-primary font-medium  flex items-center gap-1">
         <LocationIcon />
         <p>7509 LUPINE DR 33610, Tampa, FL.</p>

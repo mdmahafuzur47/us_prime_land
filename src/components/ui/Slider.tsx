@@ -25,7 +25,6 @@ export default function Slider({ children }: { children: any }) {
   return (
     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Swiper
-        slidesPerView={6}
         spaceBetween={10}
         autoplay={{
           delay: 800,
@@ -40,6 +39,37 @@ export default function Slider({ children }: { children: any }) {
           swiperRef.current = swiper;
         }}
         className="mySwiper"
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 10,
+          },
+
+          1280: {
+            slidesPerView: 6,
+            spaceBetween: 10,
+          },
+        }}
       >
         {/* <SwiperSlide></SwiperSlide> */}
         {children}

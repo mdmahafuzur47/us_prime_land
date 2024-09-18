@@ -16,10 +16,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="mx-5 relative mt-36">
+    <div className="mx-1 lg:mx-5 relative mt-36">
       <footer className="bg-myBlue  pt-20 pb-8 rounded-md text-white">
-        <Container>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 items-center">
+        <Container className="mt-28 sm:mt-10">
+          <div className="grid  md:grid-cols-2 lg:grid-cols-4 md:gap-10 gap-12 lg:gap-5 items-center">
             <div className="flex flex-col items-center">
               <Image
                 src={"/Group 29.png"}
@@ -39,8 +39,8 @@ export default function Footer() {
                 consectetur odio Vestibulum enim. nisl. quis ultrices nibh
               </p>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="w-full ml-5">
+            <div className="flex flex-col lg:items-center">
+              <div className="w-full lg:ml-5">
                 <h1 className="mb-5 font-semibold text-xl">Contact Info</h1>
               </div>
               <div className="flex flex-col gap-2">
@@ -58,9 +58,9 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col lg:ml-20">
+            <div className="flex flex-col lg:ml-20 lg:items-start md:items-center">
               <div className="w-full">
-                <h1 className="mb-5 font-semibold text-xl">Quick Links</h1>
+                <h1 className="mb-5 font-semibold lg:text-start md:text-center text-xl">Quick Links</h1>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center  gap-1 font-medium">
@@ -81,9 +81,9 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col lg:ml-8">
+            <div className="flex flex-col lg:ml-8 lg:items-start md:items-center">
               <div className="w-full">
-                <h1 className="mb-5 font-semibold text-xl">Legal</h1>
+                <h1 className="mb-5 font-semibold text-xl lg:text-start md:text-center">Legal</h1>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center  gap-1 font-medium">
@@ -106,8 +106,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 flex items-center justify-between">
-            <div className="flex gap-3 text-4xl">
+          <div className="mt-10 flex md:flex-row flex-col gap-5 items-center justify-between">
+            <div className="flex gap-3 text-3xl md:text-4xl">
               <FacebookIcon />
               <InstagramIcon />
               <TwitterIcon />
@@ -123,8 +123,8 @@ export default function Footer() {
           </div>
         </Container>
       </footer>
-      <div className="text-primary py-2 px-10 flex gap-2 items-center justify-between text-sm">
-        <p className="">
+      <div className="text-primary py-2 px-3 lg:px-10 flex md:flex-row flex-col gap-2 items-center justify-between text-sm">
+        <p className="text-center">
           Copyright (c) 2024 US Prime Properties. All rights reserved. This
           website design & developed by Paradise Solution
         </p>
@@ -142,15 +142,15 @@ export default function Footer() {
       </div>
 
       {/* Subscribe Section  */}
-      <div className="w-full flex justify-center absolute -top-[13%] ">
-        <div className="max-w-5xl w-full items-center gap-5 bg-secondary flex justify-between px-10 py-7 rounded-2xl shadow-md">
+      <div className="w-full flex justify-center absolute -top-[8%] md:-top-[13%] ">
+        <div className="max-w-4xl mx-4 md:mx-3 xl:max-w-5xl w-full items-center gap-2 md:gap-5 bg-secondary flex md:flex-row flex-col justify-between px-3 py-8 md:px-10 md:py-7 rounded-2xl shadow-md">
           <div>
-            <h1 className="text-myBlue text-4xl font-semibold">
+            <h1 className="text-myBlue text-xl text-center sm:text-start sm:text-2xl xl:text-4xl font-semibold">
               Subscribe Our Newsletter
             </h1>
-            <p>For updated news, blogs & property information</p>
+            <p className="text-center sm:text-start">For updated news, blogs & property information</p>
           </div>
-          <div className="flex ">
+          <div className="flex items-center sm:flex-row flex-col gap-2 sm:gap-0">
             <input
               type="text"
               placeholder="Your Email Address"
