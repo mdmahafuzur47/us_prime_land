@@ -21,7 +21,7 @@ export default function AboutOurPrimeProperties() {
             alt="logo"
             width={450}
             height={500}
-            className="w-[480px] object-cover relative top-14 left-28"
+            className="w-[480px] object-cover relative top-14 left-16 md:left-28"
           />
           <Image
             src={"/aboutOur/Rectangle 58.png"}
