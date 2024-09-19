@@ -50,7 +50,7 @@ export default function Navbar() {
                           <Link href={navLink?.path}>{navLink?.name}</Link>
                           <DownArrow className="text-xl mt-1" />
                           {/* children dropdown */}
-                          <div className="fixed top-[90px]  w-[200px] bg-white shadow-lg rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 transition-all duration-300 z-10">
+                          <div className="fixed top-[91px]  w-[200px] bg-white shadow-lg rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 transition-all duration-300 z-10">
                             <ul className="py-2">
                               {navLink?.children.map((child, index) => (
                                 <li key={index}>
