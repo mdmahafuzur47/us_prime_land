@@ -64,7 +64,7 @@ export default function PropertyDetails() {
             <h1 className="text-3xl font-medium mb-1">$555,000 • 120 Acres</h1>
             <p>River Front Drive, Cordova, AL 35550 - Walker County</p>
           </div>
-          <div>
+          <div className="flex">
             <button className="px-5 py-1 rounded-2xl text-sm font-semibold bg-primary text-white">
               Recreational
             </button>
