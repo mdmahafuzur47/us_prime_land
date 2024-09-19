@@ -10,7 +10,7 @@ export default function ReadOurLatestNews() {
         <h1 className="text-3xl md:text-4xl mb-10 mt-3 font-semibold">
         Read Our Latest News
         </h1>
-      <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-5'>
+      <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-2'>
         <BlogCard />
         <BlogCard />
         <BlogCard />

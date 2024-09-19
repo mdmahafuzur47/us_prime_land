@@ -4,7 +4,7 @@ import TopNavBar from "./TopNavBar";
 import Image from "next/image";
 import { navLinks } from "./navLinks";
 import Link from "next/link";
-import { MenuIcon } from "../icons/Icons";
+import { DownArrow, MenuIcon } from "../icons/Icons";
 import SideBar from "./SideBar";
 
 export default function Navbar() {
@@ -46,7 +46,29 @@ export default function Navbar() {
                   {navLinks?.map((navLinks, i: number) => {
                     return (
                       <li key={i}>
-                        <Link href={navLinks?.path}>{navLinks?.name}</Link>
+                        {navLinks?.children ? (
+                          <div className="flex group relative items-center gap-[1px]">
+                            <Link href={navLinks?.path}>{navLinks?.name}</Link>
+                            <DownArrow className="text-xl mt-1" />
+                            {/* children dropdown */}
+                            <div className="absolute top-full rounded-b-md left-0 w-[200px] bg-white shadow-lg hidden group-hover:block z-10">
+                              <ul className="py-2">
+                                {navLinks?.children.map((child, index) => (
+                                  <li key={index}>
+                                    <Link
+                                      href={child.path}
+                                      className="block px-4 py-2 hover:bg-gray-100"
+                                    >
+                                      {child.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        ) : (
+                          <Link href={navLinks?.path}>{navLinks?.name}</Link>
+                        )}
                       </li>
                     );
                   })}

@@ -1,16 +1,16 @@
-import PropertiesCard from "@/components/pages/properties/PropertiesCard";
-import SearchProperties from "@/components/pages/properties/SearchProperties";
+import SearchPropertiesLand from "@/components/pages/properties/land/SearchPropertiesLand";
+import PropertiesCard from "@/components/pages/properties/home/PropertiesCard";
 import Container from "@/components/ui/Container";
 import React from "react";
 
-export default function Properties() {
+export default function PropertiesLand() {
   return (
     <Container className="mt-5">
       {/* search properties  */}
-      <SearchProperties />
+      <SearchPropertiesLand />
 
       <div className="mt-8">
-        <h1 className="text-2xl font-semibold">Property&apos;s</h1>
+        <h1 className="text-2xl font-semibold">Property&apos;s Land</h1>
         <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
           <PropertiesCard />
           <PropertiesCard />

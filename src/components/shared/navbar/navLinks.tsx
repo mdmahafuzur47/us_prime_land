@@ -1,6 +1,7 @@
 export interface INavLinks {
     name: string;
     path: string;
+    children?: INavLinks[];
 } 
 
 export const navLinks:INavLinks[] = [
@@ -14,7 +15,17 @@ export const navLinks:INavLinks[] = [
     },
     {
         name: "Properties",
-        path: "/properties"
+        path: "/properties/land",
+        children: [
+            {
+                name: "Land",
+                path: "/properties/land",
+            },
+            {
+                name: "Home",
+                path: "/properties/home",
+            },
+        ]
     },
     {
         name: "Blogs/News",

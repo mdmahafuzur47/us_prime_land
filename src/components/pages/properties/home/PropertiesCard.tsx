@@ -1,10 +1,11 @@
 import { HomeSearchIcon } from '@/components/shared/icons/Icons'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function PropertiesCard() {
   return (
-    <div className='overflow-hidden rounded-lg text-white bg-primary'>
+    <Link href={"/properties/12345"} className='overflow-hidden rounded-lg text-white bg-primary'>
       <Image 
         src={'/img.png'}
         alt="blog"
@@ -37,6 +38,6 @@ export default function PropertiesCard() {
             </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

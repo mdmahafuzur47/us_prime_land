@@ -1,5 +1,6 @@
 import CommonHeader from "@/components/ui/CommonHeader";
 import Container from "@/components/ui/Container";
+import Link from "next/link";
 import React from "react";
 
 export default function PropertiesLocation() {
@@ -11,20 +12,20 @@ export default function PropertiesLocation() {
           Properties by Cities
         </h1>
 
-        <div className="w-full grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-          <PropertiesCard />
-          <PropertiesCard />
-          <PropertiesCard />
-          <PropertiesCard />
+        <div className="w-full grid md:grid-cols-2 xl:grid-cols-4 gap-2">
+          <PropertiesByCityCard />
+          <PropertiesByCityCard />
+          <PropertiesByCityCard />
+          <PropertiesByCityCard />
         </div>
       </Container>
     </div>
   );
 }
 
-const PropertiesCard = () => {
+const PropertiesByCityCard = () => {
   return (
-    <div
+    <Link href={"/"} 
       className="overflow-hidden relative text-white rounded-md"
       style={{
         background: "url('/img.png')",
@@ -43,6 +44,6 @@ const PropertiesCard = () => {
           View All
         </button>
       </div>
-    </div>
+    </Link>
   );
 };

@@ -12,7 +12,7 @@ export default function HowItWorks() {
           Find a Perfect Home
         </h1>
 
-        <div className="w-full grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="w-full grid md:grid-cols-2 xl:grid-cols-4 gap-2">
           <HowItWorkCard />
           <HowItWorkCard />
           <HowItWorkCard />
