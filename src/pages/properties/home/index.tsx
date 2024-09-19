@@ -1,5 +1,5 @@
-import SearchPropertiesHome from "@/components/pages/properties/home/SearchPropertiesHome";
 import PropertiesCard from "@/components/pages/properties/home/PropertiesCard";
+import SearchPropertiesHome from "@/components/pages/properties/home/SearchPropertiesHome";
 
 import Container from "@/components/ui/Container";
 import React from "react";

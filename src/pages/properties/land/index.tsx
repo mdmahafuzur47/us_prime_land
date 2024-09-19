@@ -1,5 +1,5 @@
+import { LandCard } from "@/components/pages/properties/land/LandCard";
 import SearchPropertiesLand from "@/components/pages/properties/land/SearchPropertiesLand";
-import PropertiesCard from "@/components/pages/properties/home/PropertiesCard";
 import Container from "@/components/ui/Container";
 import React from "react";
 
@@ -12,10 +12,10 @@ export default function PropertiesLand() {
       <div className="mt-8">
         <h1 className="text-2xl font-semibold">Property&apos;s Land</h1>
         <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-          <PropertiesCard />
-          <PropertiesCard />
-          <PropertiesCard />
-          <PropertiesCard />
+          <LandCard />
+          <LandCard />
+          <LandCard />
+          <LandCard />
         </div>
       </div>
 
@@ -35,16 +35,16 @@ export default function PropertiesLand() {
 
       <div className="mt-20">
         <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-          <PropertiesCard />
-          <PropertiesCard />
-          <PropertiesCard />
-          <PropertiesCard />
+          <LandCard />
+          <LandCard />
+          <LandCard />
+          <LandCard />
         </div>
         <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-          <PropertiesCard />
-          <PropertiesCard />
-          <PropertiesCard />
-          <PropertiesCard />
+          <LandCard />
+          <LandCard />
+          <LandCard />
+          <LandCard />
         </div>
       </div>
     </Container>
