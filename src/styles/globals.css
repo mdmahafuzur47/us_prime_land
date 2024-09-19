@@ -5,3 +5,9 @@
 * {
   font-family: "Poppins", system-ui;
 }
+
+@layer components{
+  .searchInput{
+    @apply border px-5 py-2 rounded-md ring-2 ring-primary
+  }
+}

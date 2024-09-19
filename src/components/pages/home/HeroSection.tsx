@@ -18,7 +18,13 @@ export default function HeroSection() {
         {/* content  */}
         <div className="z-10 flex flex-col w-full h-full items-center justify-center text-white text-center">
           <div className="flex gap-1 items-center">
-            <Image src={"/logo.png"} alt="Logo" width={50} height={50} className="w-10 md:w-11" />
+            <Image
+              src={"/logo.png"}
+              alt="Logo"
+              width={50}
+              height={50}
+              className="w-10 md:w-11"
+            />
             <h1 className="md:text-xl font-semibold">
               WELCOME TO US PRIME PROPERTIES
             </h1>
@@ -49,15 +55,14 @@ export default function HeroSection() {
       </div>
 
       {/* text arrow  */}
-      <Container className="" >
-      <Image 
-        src={"/US PRIME PROPERTIES.png"}
-        alt="US PRIME PROPERTIES"
-        width={2000}
-        height={150}
-        className="xl:h-[90px] lg:h-[60px] h-[40px]"
-      />
-
+      <Container className="">
+        <Image
+          src={"/US PRIME PROPERTIES.png"}
+          alt="US PRIME PROPERTIES"
+          width={2000}
+          height={150}
+          className="xl:h-[90px] lg:h-[60px] h-[40px]"
+        />
       </Container>
     </>
   );
