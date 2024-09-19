@@ -43,35 +43,33 @@ export default function Navbar() {
             <div className="flex items-center gap-5">
               <div className="hidden lg:block">
                 <ul className="flex gap-5 font-medium text-primary">
-                  {navLinks?.map((navLinks, i: number) => {
-                    return (
-                      <li key={i}>
-                        {navLinks?.children ? (
-                          <div className="flex group relative items-center gap-[1px]">
-                            <Link href={navLinks?.path}>{navLinks?.name}</Link>
-                            <DownArrow className="text-xl mt-1" />
-                            {/* children dropdown */}
-                            <div className="absolute top-full rounded-b-md left-0 w-[200px] bg-white shadow-lg hidden group-hover:block z-10">
-                              <ul className="py-2">
-                                {navLinks?.children.map((child, index) => (
-                                  <li key={index}>
-                                    <Link
-                                      href={child.path}
-                                      className="block px-4 py-2 hover:bg-gray-100"
-                                    >
-                                      {child.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
+                  {navLinks?.map((navLink, i: number) => (
+                    <li key={i} className="">
+                      {navLink?.children ? (
+                        <div className="flex relative group items-center gap-[1px]">
+                          <Link href={navLink?.path}>{navLink?.name}</Link>
+                          <DownArrow className="text-xl mt-1" />
+                          {/* children dropdown */}
+                          <div className="fixed top-[90px]  w-[200px] bg-white shadow-lg rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-1 transition-all duration-300 z-10">
+                            <ul className="py-2">
+                              {navLink?.children.map((child, index) => (
+                                <li key={index}>
+                                  <Link
+                                    href={child.path}
+                                    className="block px-4 py-2 hover:bg-gray-100"
+                                  >
+                                    {child.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
                           </div>
-                        ) : (
-                          <Link href={navLinks?.path}>{navLinks?.name}</Link>
-                        )}
-                      </li>
-                    );
-                  })}
+                        </div>
+                      ) : (
+                        <Link href={navLink?.path}>{navLink?.name}</Link>
+                      )}
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="flex items-center gap-5">
