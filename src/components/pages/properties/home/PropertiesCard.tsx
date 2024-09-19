@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function PropertiesCard() {
   return (
-    <Link href={"/properties/12345"} className='overflow-hidden rounded-lg text-white bg-primary'>
+    <Link href={"/properties/home/12345"} className='overflow-hidden rounded-lg text-white bg-primary'>
       <Image 
         src={'/img.png'}
         alt="blog"

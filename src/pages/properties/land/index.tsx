@@ -11,7 +11,7 @@ export default function PropertiesLand() {
 
       <div className="mt-8">
         <h1 className="text-2xl font-semibold">Property&apos;s Land</h1>
-        <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-2">
           <LandCard />
           <LandCard />
           <LandCard />
@@ -34,13 +34,13 @@ export default function PropertiesLand() {
       </div>
 
       <div className="mt-20">
-        <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-2">
           <LandCard />
           <LandCard />
           <LandCard />
           <LandCard />
         </div>
-        <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="w-full mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-2">
           <LandCard />
           <LandCard />
           <LandCard />
