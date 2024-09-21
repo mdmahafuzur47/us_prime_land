@@ -15,24 +15,26 @@ export default function PropertyDetailsHome() {
       <SharedHeroSection />
 
       {/* property details images  */}
-      <section className="mt-2 grid grid-cols-7 gap-2">
-        <div className="col-span-2 flex flex-col gap-2">
-          <Image
-            src={"/img.png"}
-            alt="US PRIME PROPERTIES"
-            width={2000}
-            height={900}
-            className="w-full rounded-md"
-          />
-          <Image
-            src={"/img.png"}
-            alt="US PRIME PROPERTIES"
-            width={2000}
-            height={900}
-            className="w-full rounded-md"
-          />
+      <section className="mt-2 grid md:grid-cols-5 xl:grid-cols-7 gap-2">
+        <div className="md:block hidden col-span-2">
+          <div className=" flex flex-col gap-2">
+            <Image
+              src={"/img.png"}
+              alt="US PRIME PROPERTIES"
+              width={2000}
+              height={900}
+              className="w-full rounded-md"
+            />
+            <Image
+              src={"/img.png"}
+              alt="US PRIME PROPERTIES"
+              width={2000}
+              height={900}
+              className="w-full rounded-md"
+            />
+          </div>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-3 w-full">
           <Image
             src={"/img.png"}
             alt="US PRIME PROPERTIES"
@@ -41,31 +43,33 @@ export default function PropertyDetailsHome() {
             className="w-full rounded-md h-full"
           />
         </div>
-        <div className="col-span-2 flex flex-col gap-2">
-          <Image
-            src={"/img.png"}
-            alt="US PRIME PROPERTIES"
-            width={2000}
-            height={900}
-            className="w-full rounded-md"
-          />
-          <Image
-            src={"/img.png"}
-            alt="US PRIME PROPERTIES"
-            width={2000}
-            height={900}
-            className="w-full rounded-md"
-          />
+        <div className="hidden xl:block col-span-2">
+          <div className=" flex flex-col gap-2">
+            <Image
+              src={"/img.png"}
+              alt="US PRIME PROPERTIES"
+              width={2000}
+              height={900}
+              className="w-full rounded-md"
+            />
+            <Image
+              src={"/img.png"}
+              alt="US PRIME PROPERTIES"
+              width={2000}
+              height={900}
+              className="w-full rounded-md"
+            />
+          </div>
         </div>
       </section>
-      <div className="mt-5 flex w-full gap-10">
+      <div className="mt-5 flex lg:flex-row items-center lg:items-start flex-col w-full gap-10">
         {/* properties details  */}
         <div className="flex-1 w-full">
           <div className="mb-3">
             <h1 className="text-3xl font-medium mb-1">$555,000 • 120 Acres</h1>
             <p>River Front Drive, Cordova, AL 35550 - Walker County</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center flex-wrap gap-2">
             <button className="px-5 py-1 rounded-2xl text-sm font-semibold bg-primary text-white">
               Recreational
             </button>
@@ -96,7 +100,7 @@ export default function PropertyDetailsHome() {
           </p>
           <div className="mt-8">
             <h5 className="text-2xl font-medium mb-3">Highlights</h5>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid md:grid-cols-2 gap-3">
               <div className="p-5 rounded-xl shadow bg-secondary">
                 <p>
                   Prime location along the North Canadian River with almost 2
@@ -184,7 +188,7 @@ export default function PropertyDetailsHome() {
             <p>Agent must be present for showing.</p>
 
             <button className="px-5 py-1 mt-5 rounded-2xl font-semibold bg-primary text-white">
-            Contact Seller for Directions
+              Contact Seller for Directions
             </button>
           </div>
 
