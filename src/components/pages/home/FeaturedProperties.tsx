@@ -16,7 +16,7 @@ export default function FeaturedProperties() {
         <div className="w-full">
           <h1 className="text-start mb-3 text-xl md:text-2xl font-semibold">
             Land &gt; &gt; &gt;
-          </h1>
+          </h1> 
         </div>
         <div className="w-full grid md:grid-cols-2 xl:grid-cols-4 gap-2">
           <LandCard />
