@@ -29,6 +29,6 @@ export const navLinks:INavLinks[] = [
     },
     {
         name: "Blogs/News",
-        path: "/blogs_news"
+        path: "/blogs&news"
     },
 ]

@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const LandCard = () => {
   return (
-    <div className="overflow-hidden rounded-lg text-white bg-primary">
+    <Link href={"/properties/land/12345"} className="overflow-hidden rounded-lg text-white bg-primary">
       <Image
         src={"/img.png"}
         alt="blog"
@@ -24,6 +25,6 @@ export const LandCard = () => {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

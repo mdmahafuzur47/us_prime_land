@@ -9,7 +9,7 @@ import SharedHeroSection from "@/components/ui/SharedHeroSection";
 import Image from "next/image";
 import React from "react";
 
-export default function PropertyDetailsHome() {
+export default function PropertyDetailsLand() {
   return (
     <Container className="mt-3">
       <SharedHeroSection title="Properties Details" />

@@ -73,9 +73,11 @@ export default function Navbar() {
                 </ul>
               </div>
               <div className="flex items-center gap-5">
+                <Link href={"/contactUs"}>
                 <button className="bg-primary sm:block hidden px-7 py-1 rounded-2xl text-white">
                   Contact Us
                 </button>
+                </Link>
                 <div
                   onClick={toggleMenu}
                   className="border w-fit p-3 rounded-full text-2xl"
