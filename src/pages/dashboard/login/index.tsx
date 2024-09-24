@@ -1,13 +1,28 @@
+import { useLoginUserMutation } from "@/redux/api/authApi/authApi";
 import React, { FormEvent, useState } from "react";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [mutation] = useLoginUserMutation();
+
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log("Email:", email, "Password:", password);
+
+    console.log("click")
+    try{
+      const res = mutation({
+        email,
+        password
+      })
+      if("error" in res){
+        console.log(res)
+      }
+      console.log(res)
+    }catch(err){
+      console.log(err)
+    }
   };
 
   return (
