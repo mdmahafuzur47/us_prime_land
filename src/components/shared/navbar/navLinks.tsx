@@ -32,3 +32,17 @@ export const navLinks:INavLinks[] = [
         path: "/blogs&news"
     },
 ]
+export const adminNavLinks:INavLinks[] = [
+    {
+        name: "Dashboard",
+        path: "/admin/dashboard"
+    },
+    {
+        name: "Blog Management",
+        path: "/admin/blogManagement"
+    },
+    {
+        name: "Lead Collection",
+        path: "/admin/leadCollection"
+    },
+]

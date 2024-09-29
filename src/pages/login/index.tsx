@@ -1,7 +1,9 @@
 import { useLoginUserMutation } from "@/redux/api/authApi/authApi";
+import { useRouter } from "next/router";
 import React, { FormEvent, useState } from "react";
 
 const LoginPage = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -9,7 +11,6 @@ const LoginPage = () => {
 
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
-
     console.log("click")
     try{
       const res = mutation({
@@ -20,6 +21,7 @@ const LoginPage = () => {
         console.log(res)
       }
       console.log(res)
+      router.push("admin/dashboard")
     }catch(err){
       console.log(err)
     }
