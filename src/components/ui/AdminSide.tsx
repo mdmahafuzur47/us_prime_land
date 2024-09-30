@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import AdminLinks from "../shared/navbar/AdminLinks";
+import Link from "next/link";
 
 export default function AdminSide({
   isOpen,
@@ -15,7 +16,7 @@ export default function AdminSide({
         isOpen ? "translate-x-0" : "-translate-x-full"
       } md:translate-x-0 w-80 bg-red-100 md:bg-transparent md:w-full px-5 py-3`}
     >
-      <div className="flex gap-2 mt-10 md:mt-0 items-center mb-8">
+      <Link href={"/"} className="flex gap-2 mt-10 md:mt-0 items-center mb-8">
         <Image
           src={"/logo.png"}
           alt="Logo"
@@ -31,7 +32,7 @@ export default function AdminSide({
             Powered by US Prime Land
           </p>
         </div>
-      </div>
+      </Link>
       <div className="px-4">
         <AdminLinks />
       </div>

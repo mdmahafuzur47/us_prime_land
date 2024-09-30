@@ -38,6 +38,10 @@ export const adminNavLinks:INavLinks[] = [
         path: "/admin/dashboard"
     },
     {
+        name: "Property Management",
+        path: "/admin/propertyManagement"
+    },
+    {
         name: "Blog Management",
         path: "/admin/blogManagement"
     },

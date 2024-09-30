@@ -10,4 +10,7 @@
   .searchInput{
     @apply border px-5 py-2 rounded-md ring-2 ring-primary
   }
+  .input{
+    @apply border px-5 py-2 focus:outline-gray-300 rounded-md ring-2 ring-gray-100
+  }
 }

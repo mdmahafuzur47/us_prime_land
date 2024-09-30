@@ -1,6 +1,6 @@
 import ReadOurLatestNews from "@/components/pages/home/ReadOurLatestNews";
+import ShareListing from "@/components/pages/properties/ShareListing";
 import {
-  ContactIcon,
   LoveIcon,
   ShareIcon,
 } from "@/components/shared/icons/Icons";
@@ -208,7 +208,7 @@ export default function PropertyDetailsHome() {
           </div>
         </div>
         {/* side section  */}
-        <div className="w-[30%]">
+        <div className="max-w-xl mx-auto lg:w-[30%]">
           <div className="flex gap-4 justify-center">
             <div className="border-2 text-gray-700 px-8 shadow py-2 border-dashed rounded-2xl flex items-center gap-1">
               <LoveIcon className="text-2xl" />
@@ -220,10 +220,7 @@ export default function PropertyDetailsHome() {
             </div>
           </div>
           <div>
-            <div className="flex justify-center px-4 py-2 bg-[#1b3254] text-white rounded-lg mt-5">
-              <ContactIcon className="text-2xl" />
-              <p className="font-medium">Contact Seller</p>
-            </div>
+           <ShareListing />
           </div>
         </div>
       </div>

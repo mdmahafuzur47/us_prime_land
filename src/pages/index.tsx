@@ -1,4 +1,5 @@
 import AboutOurPrimeProperties from "@/components/pages/home/AboutOurPrimeProperties";
+import ClientSays from "@/components/pages/home/ClientSays";
 import FeaturedProperties from "@/components/pages/home/FeaturedProperties";
 import HeroSection from "@/components/pages/home/HeroSection";
 import HowItWorks from "@/components/pages/home/HowItWorks";
@@ -17,6 +18,7 @@ export default function Home() {
       <HowItWorks />
       <WhyChooseUs />
       <PropertiesLocation />
+      <ClientSays />
       <ReadOurLatestNews />
     </div>
   );
