@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <main className="overflow-hidden">
       {path.startsWith("/admin") ? (
-        <div className="flex min-h-screen h-full">
+        <div className="flex h-screen">
           {/* Sidebar toggle button for mobile */}
           <div className="">
             <button
@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
 
           {/* Admin main content */}
-          <div className="flex-1 bg-blue-50 px-5 py-2">
+          <div className="flex-1 bg-gray-100 px-5 py-2 overflow-y-auto">
             <div className="flex w-full justify-between items-center">
               <div className="flex items-center gap-3">
                 {/* <MenuIcon className="text-3xl" /> */}
