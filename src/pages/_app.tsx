@@ -4,12 +4,15 @@ import Layout from "./_layout";
 import { Provider } from "react-redux";
 import { store } from "@/redux/store";
 
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Provider store={store} >
-      <Component {...pageProps} />
+   
+      <Provider store={store}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Provider>
-    </Layout>
+    
   );
 }
