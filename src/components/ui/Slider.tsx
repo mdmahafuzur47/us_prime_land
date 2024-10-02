@@ -27,13 +27,14 @@ export default function Slider({ children }: { children: any }) {
       <Swiper
         spaceBetween={10}
         autoplay={{
-          delay: 800,
+          delay: 500,
           disableOnInteraction: false,
         }}
-        speed={1800}
+        speed={1500}
         pagination={{
           clickable: true,
         }}
+        loop={true}
         modules={[Autoplay]}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;

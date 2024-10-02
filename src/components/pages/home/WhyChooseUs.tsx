@@ -115,7 +115,7 @@ export default function WhyChooseUs() {
   );
 }
 
-const CTA = () => {
+export const CTA = () => {
   return (
     <Container>
      <div className="mt-20 w-full items-center bg-secondary flex md:flex-row flex-col justify-between rounded-2xl shadow-md gap-3 sm:gap-5 lg:gap-10 px-16 py-10">

@@ -1,10 +1,11 @@
 import { RightArrow } from '@/components/shared/icons/Icons'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function BlogCard() {
   return (
-    <div className='overflow-hidden rounded-lg text-white bg-myBlue'>
+    <Link href={"/blogs&news/123456"} className='overflow-hidden rounded-lg text-white bg-myBlue'>
       <Image 
         src={'/img.png'}
         alt="blog"
@@ -22,6 +23,6 @@ export default function BlogCard() {
             <RightArrow />
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

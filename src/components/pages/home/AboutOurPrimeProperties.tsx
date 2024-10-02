@@ -31,9 +31,9 @@ export default function AboutOurPrimeProperties() {
             className="w-[150px] md:w-[250px] object-cover absolute bottom-5 lg:-bottom-8 left-0"
           />
         </div>
-        <div className="flex-1">
-          <CommonHeader title="About US PRIME PROPERTIES" />
-          <h1 className="text-3xl md:text-5xl mb-5 mt-3 font-semibold">
+        <div className="flex-1 lg:mt-14">
+          <CommonHeader left={true} title="About US PRIME PROPERTIES" />
+          <h1 className="text-3xl md:text-5xl mb-5 mt-4 font-semibold">
             The Leading Real Estate About Marketplace.
           </h1>
           <p>

@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // ListingForm.tsx
 import React, { Dispatch, SetStateAction } from "react";
-import { Form, Input, Checkbox, Button, Switch } from "antd";
+import { Form, Input, Checkbox, Button, Switch, Select } from "antd";
 
 const { Item } = Form;
+
+const { Option } = Select;
 
 interface PropertyOption {
   label: string;
@@ -87,18 +89,38 @@ const PropertyInfoFrom = ({
         </Item>
 
         {/* LandAndFarm Details */}
-        <div className="mb-4">
-          <h3 className="font-bold">LandAndFarm Details</h3>
-          <Item name="firstType" label="1st Type">
-            <Input placeholder="Enter 1st type" />
-          </Item>
-          <Item name="secondType" label="2nd Type">
-            <Input placeholder="Enter 2nd type" />
-          </Item>
-          <Item name="thirdType" label="3rd Type">
-            <Input placeholder="Enter 3rd type" />
-          </Item>
-        </div>
+        {propertyTypes?.length > 0 && (
+          <div className="mb-4">
+            <h3 className="font-medium mb-3">Property Type Priority</h3>
+            <Item name="firstType" label="1st Type">
+              <Select placeholder="Select 1st Type">
+                {propertyTypes?.map((option: string) => (
+                  <Option key={option} value={option}>
+                    {option}
+                  </Option>
+                ))}
+              </Select>
+            </Item>
+            <Item name="secondType" label="2nd Type">
+              <Select placeholder="Select 1st Type">
+                {propertyTypes?.map((option: string) => (
+                  <Option key={option} value={option}>
+                    {option}
+                  </Option>
+                ))}
+              </Select>
+            </Item>
+            <Item name="thirdType" label="3rd Type">
+              <Select placeholder="Select 1st Type">
+                {propertyTypes?.map((option: string) => (
+                  <Option key={option} value={option}>
+                    {option}
+                  </Option>
+                ))}
+              </Select>
+            </Item>
+          </div>
+        )}
 
         {/* Has a House */}
         <Item name="hasHouse" label="Has a House?" valuePropName="checked">

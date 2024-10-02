@@ -49,4 +49,8 @@ export const adminNavLinks:INavLinks[] = [
         name: "Lead Collection",
         path: "/admin/leadCollection"
     },
+    {
+        name: "Configuration",
+        path: "/admin/configuration"
+    },
 ]
