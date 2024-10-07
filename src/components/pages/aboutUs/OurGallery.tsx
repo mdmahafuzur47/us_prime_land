@@ -4,7 +4,7 @@ import React from "react";
 
 export default function OurGallery() {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full mt-20 flex flex-col items-center">
       <CommonHeader left={true} title="Gallery" />
       <h1 className="text-3xl md:text-5xl mb-5 mt-4 font-semibold">
         Our Photo Gallery
