@@ -17,7 +17,7 @@ export default function AboutUs() {
       <HowItWorks />
       <Container>
         <OurGallery />
-        <CTA />
+        <CTA /> 
         <ClientSays />
       </Container>
     </div>
