@@ -15,7 +15,7 @@ export const authApi = api.injectEndpoints({
     authCheck: builder.query({
       query: () => {
         return {
-          url: "/user/authCheck",
+          url: "/auth/check_login",
           method: "GET",
         };
       },

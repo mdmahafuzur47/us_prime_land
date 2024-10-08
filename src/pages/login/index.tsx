@@ -9,21 +9,21 @@ const LoginPage = () => {
 
   const [mutation] = useLoginUserMutation();
 
-  const handleLogin = (e: FormEvent) => {
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("click")
-    try{
-      const res = mutation({
+    console.log("click");
+    try {
+      const res = await mutation({
         email,
-        password
-      })
-      if("error" in res){
-        console.log(res)
+        password,
+      });
+      if ("error" in res) {
+        console.log(res);
       }
-      console.log(res)
-      router.push("admin/dashboard")
-    }catch(err){
-      console.log(err)
+      console.log(res);
+      router.push("admin/dashboard");
+    } catch (err) {
+      console.log(err);
     }
   };
 

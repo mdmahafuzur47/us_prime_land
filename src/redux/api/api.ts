@@ -6,7 +6,7 @@ const api = createApi({
     baseUrl: "http://localhost:5001/api/v1",
     credentials: "include",
   }),
-  tagTypes: ["auth"],
+  tagTypes: ["auth","property"],
   endpoints: () => ({}),
 });
 

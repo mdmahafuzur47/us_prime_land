@@ -1,8 +1,26 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useCreatePropertyTypeMutation } from "@/redux/api/propertyApi/propertyApi";
 import { Alert, Button, Form, Input, Modal, Select } from "antd";
 import React, { useState } from "react";
 
 export default function AddPropertyType() {
+  const [mutation] = useCreatePropertyTypeMutation();
   const [Open, setOpen] = useState(false);
+  const onFinish = async (values: any) => {
+    console.log("Form values:", values);
+
+    try {
+      const res = await mutation(values);
+      if ("error" in res) {
+        console.error(res.error);
+        return;
+      }
+      console.log(res);
+      setOpen(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <div>
       <Button onClick={() => setOpen((pre) => !pre)}>
@@ -18,6 +36,7 @@ export default function AddPropertyType() {
           <Alert type="error" showIcon closable message="SomeThing is Wrong" />
         </div>
         <Form
+          onFinish={onFinish}
           initialValues={{
             type: "property",
           }}
