@@ -5,7 +5,7 @@ import AddCounty from "./AddCounty";
 export default function County() {
   return (
     <div>
-      <Card title="County" extra={<AddCounty />}>
+      {/* <Card title="County" extra={<AddCounty />}>
         <Table
           columns={[
             {
@@ -40,7 +40,7 @@ export default function County() {
             },
           ]}
         />
-      </Card>
+      </Card> */}
     </div>
   );
 }

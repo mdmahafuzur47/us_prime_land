@@ -9,8 +9,8 @@ export default function AdminLinks() {
   return (
     <div className="flex flex-col gap-3">
       {adminNavLinks.map((link, index) => (
-        <Link className={`${path === link?.path ? "bg-gray-200 " : ""} py-2 px-2 rounded-md shadow-sm hover:bg-gray-200`} href={link.path} key={index}>
-          <div className="text-xl flex items-center gap-2 ">
+        <Link className={`${path === link?.path ? "bg-blue-600 text-white" : "text-black"} py-2 px-4 hover:bg-blue-500 hover:text-white transition-all duration-100`} href={link.path} key={index}>
+          <div className="text-[17px] font-medium flex items-center gap-2 ">
             <MenuIcon />
             <p>{link.name}</p>
           </div>

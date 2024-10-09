@@ -3,27 +3,28 @@ import { useRouter } from "next/router";
 import React, { FormEvent, useState } from "react";
 
 const LoginPage = () => {
+  const [mutation, { isLoading }] = useLoginUserMutation();
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const [mutation] = useLoginUserMutation();
+  const [error, setError] = useState<string | null>(null); // For error handling
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("click");
+    setError(null); // Reset the error state before login
     try {
       const res = await mutation({
         email,
         password,
       });
       if ("error" in res) {
-        console.log(res);
+        setError("Invalid email or password");
+      } else {
+        router.push("admin/dashboard");
       }
-      console.log(res);
-      router.push("admin/dashboard");
     } catch (err) {
       console.log(err);
+      setError("An unexpected error occurred. Please try again.");
     }
   };
 
@@ -68,17 +69,20 @@ const LoginPage = () => {
             />
           </div>
 
+          {error && <p className="text-red-500 mb-4">{error}</p>} {/* Error display */}
+
           <div className="mb-4 text-right">
-            <a href="#" className="text-blue-500 hover:underline">
+            <a href="/forgot-password" className="text-blue-500 hover:underline">
               Forgot Password?
             </a>
           </div>
 
           <button
+            disabled={isLoading}
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
           >
-            Login
+            {isLoading ? "Loading..." : "Login"}
           </button>
         </form>
       </div>

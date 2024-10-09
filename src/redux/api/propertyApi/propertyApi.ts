@@ -21,7 +21,15 @@ export const propertyApi = api.injectEndpoints({
       }),
       providesTags: ["property"],
     }),
+    propertyTypeStatusChange: builder.mutation({
+        query: (data) => ({
+          url: "/property/propertyType_status_change",
+          method: "POST",
+          body: data,
+        }),
+        invalidatesTags: ["property"],
+      }),
   }),
 });
 
-export const { useCreatePropertyTypeMutation,useGetPropertyTypeQuery } = propertyApi;
+export const { useCreatePropertyTypeMutation,useGetPropertyTypeQuery,usePropertyTypeStatusChangeMutation } = propertyApi;

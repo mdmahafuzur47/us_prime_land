@@ -24,24 +24,22 @@ export default function AddCounty() {
   };
 
   const handleFilter = () => {
-    setMapReLoad(true)
+    setMapReLoad(true);
     const filteredData = usCountiesGeoJSON.features.filter((feature) =>
-        feature.properties.NAME.toLowerCase().includes(countyName.toLowerCase())
-);
-setLocation(filteredData);
-setTimeout(()=>{
-
-    setMapReLoad(false)
-},500)
-
+      feature.properties.NAME.toLowerCase().includes(countyName.toLowerCase())
+    );
+    setLocation(filteredData);
+    setTimeout(() => {
+      setMapReLoad(false);
+    }, 500);
   };
 
   const toggleModal = () => {
     setIsOpen((prev) => !prev);
   };
 
-  console.log(location)
-  console.log(geoData)
+  console.log(location);
+  console.log(geoData);
 
   return (
     <div>
@@ -78,13 +76,11 @@ setTimeout(()=>{
                 />
               </Form.Item>
               <div>
-
-                {
-                    MapReLoad ? <Skeleton
-                    
-                    /> : <CountySelectorMap mapData={geoData} />
-                }
-                
+                {MapReLoad ? (
+                  <Skeleton />
+                ) : (
+                  <CountySelectorMap mapData={geoData} />
+                )}
               </div>
               <div className="flex justify-end gap-2 items-center mt-4">
                 <Button type="primary" htmlType="submit">

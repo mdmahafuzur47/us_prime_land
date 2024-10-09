@@ -4,6 +4,7 @@ import { Alert, Button, Form, Input, Modal, Select } from "antd";
 import React, { useState } from "react";
 
 export default function AddPropertyType() {
+  const [form] = Form.useForm();
   const [mutation] = useCreatePropertyTypeMutation();
   const [Open, setOpen] = useState(false);
   const onFinish = async (values: any) => {
@@ -16,6 +17,7 @@ export default function AddPropertyType() {
         return;
       }
       console.log(res);
+      form.resetFields();
       setOpen(false);
     } catch (err) {
       console.error(err);
@@ -36,6 +38,7 @@ export default function AddPropertyType() {
           <Alert type="error" showIcon closable message="SomeThing is Wrong" />
         </div>
         <Form
+          form={form}
           onFinish={onFinish}
           initialValues={{
             type: "property",

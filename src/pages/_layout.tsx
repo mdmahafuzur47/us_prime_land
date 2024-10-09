@@ -1,11 +1,12 @@
 import Footer from "@/components/shared/footer/Footer";
 import { MenuIcon } from "@/components/shared/icons/Icons";
+import { Loading } from "@/components/shared/Loading";
 import Navbar from "@/components/shared/navbar/Navbar";
 import AdminSide from "@/components/ui/AdminSide";
 import { useAuthCheckQuery } from "@/redux/api/authApi/authApi";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useCallback, useEffect, useState } from "react";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const { data, isLoading } = useAuthCheckQuery(undefined);
@@ -13,20 +14,24 @@ export default function Layout({ children }: { children: ReactNode }) {
   const path = router.pathname;
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
+  const toggleSidebar = useCallback(() => {
+    setSidebarOpen((prevState) => !prevState);
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading && path.startsWith("/admin") && !data?.user) {
+      router.push("/login");
+    }
+  }, [isLoading, path, data, router]);
 
   if (isLoading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="loader">loading...</div> {/* Add your loading spinner here */}
-      </div>
-    );
+    return <Loading />;
   }
+
   const user = data?.user;
-  console.log(user);
 
   if (path.startsWith("/admin") && !user) {
-    router?.push("/login");
+    return <Loading />;
   }
 
   return (
