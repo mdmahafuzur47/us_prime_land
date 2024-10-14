@@ -1,95 +1,68 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Alert, Button, Form, Input, Skeleton } from "antd";
+import { useCreateCountyMutation } from "@/redux/api/propertyApi/propertyApi";
+import { Button, Form, Input } from "antd";
 import React, { useState } from "react";
 
-import usCountiesGeoJSON from "@/datas/counties.geojson.json";
-import CountySelectorMap from "@/components/ui/CountySelectorMap";
-import { SearchIcon } from "@/components/shared/icons/Icons";
-
 export default function AddCounty() {
-  const [isOpen, setIsOpen] = useState(false);
   const [form] = Form.useForm();
-  const countyName = Form.useWatch("county_name", form);
-  const [location, setLocation] = useState<any>([]);
-  const [MapReLoad, setMapReLoad] = useState(false);
-
-  const geoData = {
-    type: "FeatureCollection",
-    name: "cb_2017_us_county_20m",
-    crs: {
-      type: "name",
-      properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" },
-    },
-    features: location,
-  };
-
-  const handleFilter = () => {
-    setMapReLoad(true);
-    const filteredData = usCountiesGeoJSON.features.filter((feature) =>
-      feature.properties.NAME.toLowerCase().includes(countyName.toLowerCase())
-    );
-    setLocation(filteredData);
-    setTimeout(() => {
-      setMapReLoad(false);
-    }, 500);
-  };
+  const [createMutation, { isLoading }] = useCreateCountyMutation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
     setIsOpen((prev) => !prev);
   };
 
-  console.log(location);
-  console.log(geoData);
+  const onFinish = async (values: any) => {
+    console.log("Form values:", values);
+    try{
+      const res = await createMutation(values);
+      if("error" in res){
+        console.error(res.error);
+        return;
+      }
+      console.log("Created County:", res.data);
+      form.resetFields();
+      setIsOpen(false);
+    }catch(err){
+      console.error(err);
+    }
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
 
   return (
     <div>
       <Button onClick={toggleModal}>Add New County</Button>
-
       {/* Custom Modal */}
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-lg max-w-xl w-full p-5">
             <h2 className="text-lg font-semibold mb-4">Add New County</h2>
-            <div className="mt-2 py-5">
-              <Alert
-                type="error"
-                showIcon
-                closable
-                message="Something is Wrong"
-              />
-            </div>
             <Form
-              form={form}
-              initialValues={{
-                type: "property",
-              }}
+            form={form}
               layout="vertical"
+              name="add-county"
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
             >
-              <Form.Item label="County Name" name="county_name" required>
-                <Input
-                  placeholder="Enter County Name"
-                  addonAfter={
-                    <div onClick={handleFilter} className="cursor-pointer">
-                      <SearchIcon />
-                    </div>
-                  }
-                />
+              <Form.Item
+                label="County Name"
+                name="county_name"
+                rules={[
+                  { required: true, message: "Please input the county name!" },
+                ]}
+              >
+                <Input placeholder="Enter county name" />
               </Form.Item>
-              <div>
-                {MapReLoad ? (
-                  <Skeleton />
-                ) : (
-                  <CountySelectorMap mapData={geoData} />
-                )}
-              </div>
-              <div className="flex justify-end gap-2 items-center mt-4">
-                <Button type="primary" htmlType="submit">
-                  Save
+
+              <Form.Item>
+                <Button loading={isLoading} type="primary" htmlType="submit">
+                  Add County
                 </Button>
-                <Button danger type="dashed" onClick={toggleModal}>
-                  Cancel
-                </Button>
-              </div>
+              </Form.Item>
             </Form>
           </div>
         </div>

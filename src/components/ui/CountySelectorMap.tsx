@@ -8,7 +8,7 @@ const CountySelectorMap = ({ mapData }: any) => {
   const [selectedCounty, setSelectedCounty] = useState(null);
   
 
-  const onEachCounty = (county, layer) => {
+  const onEachCounty = (county:any, layer:any) => {
     const countyName = county.properties.NAME;
     console.log(county);
     // Assuming 'NAME' is the property for the county name
@@ -17,17 +17,17 @@ const CountySelectorMap = ({ mapData }: any) => {
     // Highlight the county on hover
     layer.on({
       click: () => handleCountyClick(county),
-      mouseover: (event) => highlightFeature(event),
-      mouseout: (event) => resetHighlight(event),
+      mouseover: (event:any) => highlightFeature(event),
+      mouseout: (event:any) => resetHighlight(event),
     });
   };
 
-  const handleCountyClick = (county) => {
+  const handleCountyClick = (county:any) => {
     setSelectedCounty(county?.properties.NAME); // Handle selection
     alert(`Selected County: ${county?.properties.NAME}`);
   };
 
-  const highlightFeature = (event) => {
+  const highlightFeature = (event:any) => {
     const layer = event.target;
     layer.setStyle({
       weight: 3,
@@ -37,7 +37,7 @@ const CountySelectorMap = ({ mapData }: any) => {
     });
   };
 
-  const resetHighlight = (event) => {
+  const resetHighlight = (event:any) => {
     const layer = event.target;
     layer.setStyle({
       weight: 1,

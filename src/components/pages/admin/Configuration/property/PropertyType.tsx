@@ -1,9 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card, Table, Button, Select, Spin } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import AddPropertyType from "./AddPropertyType";
-import { useGetPropertyTypeQuery, usePropertyTypeStatusChangeMutation } from "@/redux/api/propertyApi/propertyApi";
+import {
+  useDeletePropertyTypeMutation,
+  useGetPropertyTypeQuery,
+  usePropertyTypeStatusChangeMutation,
+} from "@/redux/api/propertyApi/propertyApi";
 import { Loading } from "@/components/shared/Loading";
+import UpdatePropertyType from "./UpdatePropertyType";
 
 const { Option } = Select;
 
@@ -15,29 +20,51 @@ interface PropertyTypeData {
 }
 
 export default function PropertyType() {
+  const [open, setOpen] = useState(false);
+  const [updateData, setUpdateData] = useState<any>(null);
   const { data, isLoading } = useGetPropertyTypeQuery(undefined);
-  const [statusChangeMutation, { isLoading: StatusLoading }] = usePropertyTypeStatusChangeMutation();
+  const [statusChangeMutation, { isLoading: StatusLoading }] =
+    usePropertyTypeStatusChangeMutation();
+  const [deletePropertyType, { isLoading: DeletePropertyType }] =
+    useDeletePropertyTypeMutation();
 
   if (isLoading) {
     return <Loading />;
   }
 
+  const toggle = () => {
+    setOpen((pre) => !pre);
+  };
+
   const propertyData: PropertyTypeData[] = data?.data || [];
 
   // Update handler
   const handleUpdate = (record: PropertyTypeData) => {
-    console.log("Update property type:", record);
-    
+    setUpdateData(record);
+    toggle();
   };
 
   // Delete handler
-  const handleDelete = (id: string) => {
-    console.log("Delete property type with id:", id);
-   
+  const handleDelete = async (id: string) => {
+    try {
+      const res = await deletePropertyType({
+        id,
+      });
+      if ("error" in res) {
+        console.error("Failed to delete property type:", res.error);
+        return;
+      }
+      console.log("Deleted property type successfully:", res.data);
+    } catch (err) {
+      console.error("Failed to delete property type:", err);
+    }
   };
 
   // Handle status change
-  const handleStatusChange = async (value: string, record: PropertyTypeData) => {
+  const handleStatusChange = async (
+    value: string,
+    record: PropertyTypeData
+  ) => {
     const data = {
       id: record.id,
       status: value,
@@ -86,9 +113,7 @@ export default function PropertyType() {
               dataIndex: "status",
               render: (status: string, record: PropertyTypeData) => (
                 <div className="flex items-center">
-                  {StatusLoading && (
-                    <Spin size="small" className="mr-2" />
-                  )}
+                  {StatusLoading && <Spin size="small" className="mr-2" />}
                   <Select
                     defaultValue={status}
                     className={`${
@@ -116,6 +141,7 @@ export default function PropertyType() {
                     Update
                   </Button>
                   <Button
+                    loading={DeletePropertyType}
                     type="primary"
                     className="bg-red-500 hover:bg-red-600 text-white px-3 py-1"
                     onClick={() => handleDelete(record.id)}
@@ -130,6 +156,7 @@ export default function PropertyType() {
           className="w-full"
         />
       </Card>
+      <UpdatePropertyType data={updateData} visible={open} onClose={toggle} />
     </div>
   );
 }
