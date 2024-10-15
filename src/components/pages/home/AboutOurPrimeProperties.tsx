@@ -8,7 +8,10 @@ export default function AboutOurPrimeProperties() {
   return (
     <Container className="mt-20 mb-40">
       <div className="flex lg:flex-row flex-col items-center gap-14 xl:gap-5">
-        <div className="relative overflow-hidden lg:overflow-visible flex-1">
+        <div
+          className="relative overflow-hidden lg:overflow-visible flex-1"
+          data-aos="fade-right" // Add AOS attribute for animation
+        >
           <Image
             src={"/aboutOur/logo-logo.png"}
             alt="logo"
@@ -31,45 +34,46 @@ export default function AboutOurPrimeProperties() {
             className="w-[150px] md:w-[250px] object-cover absolute bottom-5 lg:-bottom-8 left-0"
           />
         </div>
-        <div className="flex-1 lg:mt-14">
+
+        <div className="flex-1 lg:mt-14" data-aos="fade-left"> {/* Add AOS attribute for animation */}
           <CommonHeader left={true} title="About US PRIME PROPERTIES" />
           <h1 className="text-3xl md:text-5xl mb-5 mt-4 font-semibold">
-            The Leading Real Estate About Marketplace.
+            The Leading Real Estate Marketplace.
           </h1>
           <p>
             placerat lacus, at hendrerit faucibus urna. dui. amet, felis, elit.
             Lorem non. Lorem massa viverra ipsum Ut placerat sodales. Nunc
             placerat odio vitae fringilla lorem. maximus laoreet venenatis at,
-            vitae elit. sed diam tincidunt lobortis,{" "}
+            vitae elit. sed diam tincidunt lobortis,
           </p>
 
           <div className="mt-8 grid md:grid-cols-2 gap-5">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3" data-aos="fade-up"> {/* Add AOS attribute for animation */}
               <div className="bg-primary text-white p-2 rounded-full text-xl">
                 <HomeSearchIcon />
               </div>
               <p className="text-xl font-medium">Customize Planning</p>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3" data-aos="fade-up">
               <div className="bg-primary text-white p-2 rounded-full text-xl">
                 <HomeSearchIcon />
               </div>
               <p className="text-xl font-medium">Beautiful Scene Around</p>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3" data-aos="fade-up">
               <div className="bg-primary text-white p-2 rounded-full text-xl">
                 <HomeSearchIcon />
               </div>
-              <p className="text-xl font-medium">Exception al Lifestyle</p>
+              <p className="text-xl font-medium">Exceptional Lifestyle</p>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3" data-aos="fade-up">
               <div className="bg-primary text-white p-2 rounded-full text-xl">
                 <HomeSearchIcon />
               </div>
               <p className="text-xl font-medium">Fully Secure Investment</p>
             </div>
           </div>
-          <button className="bg-myBlue mt-6 text-white py-2 px-14 rounded-lg text-xl font-medium">
+          <button className="bg-myBlue mt-6 text-white py-2 px-14 rounded-lg text-xl font-medium" data-aos="fade-up"> {/* Add AOS attribute for animation */}
             Read More
           </button>
         </div>

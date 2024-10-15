@@ -25,8 +25,11 @@ export default function HowItWorks() {
 
 const HowItWorkCard = () => {
   return (
-    <div className="bg-white flex flex-col items-center shadow rounded-md px-5 py-8 text-center">
-      <div className="bg-myBlue text-white size-16 rounded-full text-4xl flex justify-center items-center mb-4">
+    <div
+      className="bg-white flex flex-col items-center shadow rounded-md px-5 py-8 text-center"
+      data-aos="fade-up" // Add AOS attribute for animation
+    >
+      <div className="bg-myBlue text-white rounded-full text-4xl flex justify-center items-center mb-4">
         <HomeSearchIcon />
       </div>
       <h1 className="mb-1 text-xl font-medium">Find Property</h1>
