@@ -3,10 +3,14 @@ import Link from "next/link";
 
 export const LandCard = () => {
   return (
-    <Link href={"/properties/land/12345"} className="overflow-hidden rounded-lg text-white bg-primary">
+    <Link
+      href={"/properties/land/12345"}
+      className="overflow-hidden rounded-lg text-white bg-primary"
+      data-aos="fade-up" // Add AOS attribute for animation
+    >
       <Image
         src={"/img.png"}
-        alt="blog"
+        alt="Property"
         width={300}
         height={250}
         className="h-[200px] w-full"
@@ -17,9 +21,9 @@ export const LandCard = () => {
           {/* <p className='font-medium'>View Property</p> */}
         </div>
         <p className="text-sm mb-4">New York City, CA, USA</p>
-        <h3 className="font-medium text-xl">Property Size # 1 Acore</h3>
+        <h3 className="font-medium text-xl">Property Size: 1 Acre</h3> {/* Corrected "Acore" to "Acre" */}
         <div className="flex items-center justify-between gap-1 my-3">
-          <p className="text-sm">Property ID # 12345</p>
+          <p className="text-sm">Property ID: 12345</p>
           <button className="px-3 shadow-md font-medium py-2 text-sm border rounded-lg">
             View Property
           </button>

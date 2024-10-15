@@ -1,48 +1,45 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// ListingForm.tsx
 import React, { Dispatch, SetStateAction } from "react";
 import { Form, Input, Checkbox, Button, Switch, Select } from "antd";
+import { useGetPropertyTypeQuery } from "@/redux/api/propertyApi/propertyApi";
 
 const { Item } = Form;
-
 const { Option } = Select;
 
-interface PropertyOption {
-  label: string;
-  value: string;
-}
 
-const PropertyInfoFrom = ({
+
+const PropertyInfoForm = ({
   setActive,
 }: {
   setActive: Dispatch<SetStateAction<number>>;
 }) => {
+  const { data: PropertyTypes, isLoading } = useGetPropertyTypeQuery(undefined);
   const [form] = Form.useForm();
   const hasHouse = Form.useWatch("hasHouse", form);
-  console.log(hasHouse);
+  const properties = Form.useWatch("propertyTypes", form);
 
-  const propertyTypes = Form.useWatch("propertyTypes", form);
-  const waterTypes = Form.useWatch("waterTypes", form);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
-  console.log(propertyTypes, waterTypes);
 
-  const propertyOptions: PropertyOption[] = [
-    { label: "Commercial Property", value: "commercialProperty" },
-    { label: "Farms", value: "farms" },
-    { label: "Horse Property", value: "horseProperty" },
-    { label: "Hunting Land", value: "huntingLand" },
-    { label: "Ranches", value: "ranches" },
-    { label: "Recreational Property", value: "recreationalProperty" },
-    { label: "Residential Property", value: "residentialProperty" },
-    { label: "Timberland", value: "timberland" },
-    { label: "Undeveloped Land", value: "undevelopedLand" },
-  ];
 
-  const waterOptions: PropertyOption[] = [
-    { label: "Beachfront Property", value: "beachfrontProperty" },
-    { label: "Lakefront Property", value: "lakefrontProperty" },
-    { label: "Riverfront Property", value: "riverfrontProperty" },
-  ];
+  // Filter the property types and water types from the data
+  const propertyOptions = PropertyTypes?.data
+    ?.filter((item: any) => item.type === "property")
+    ?.map((item: any) => ({
+      label: item.property_type,
+      value: item.property_type,
+    })) || [];
+
+
+
+  const waterOptions = PropertyTypes?.data
+    ?.filter((item: any) => item.type === "water type")
+    ?.map((item: any) => ({
+      label: item.property_type,
+      value: item.property_type,
+    })) || [];
 
   const onFinish = (values: any) => {
     setActive(1);
@@ -89,12 +86,12 @@ const PropertyInfoFrom = ({
         </Item>
 
         {/* LandAndFarm Details */}
-        {propertyTypes?.length > 0 && (
+        {properties?.length > 0 && (
           <div className="mb-4">
             <h3 className="font-medium mb-3">Property Type Priority</h3>
             <Item name="firstType" label="1st Type">
               <Select placeholder="Select 1st Type">
-                {propertyTypes?.map((option: string) => (
+                {properties?.map((option: string) => (
                   <Option key={option} value={option}>
                     {option}
                   </Option>
@@ -102,8 +99,8 @@ const PropertyInfoFrom = ({
               </Select>
             </Item>
             <Item name="secondType" label="2nd Type">
-              <Select placeholder="Select 1st Type">
-                {propertyTypes?.map((option: string) => (
+              <Select placeholder="Select 2nd Type">
+                {properties?.map((option: string) => (
                   <Option key={option} value={option}>
                     {option}
                   </Option>
@@ -111,8 +108,8 @@ const PropertyInfoFrom = ({
               </Select>
             </Item>
             <Item name="thirdType" label="3rd Type">
-              <Select placeholder="Select 1st Type">
-                {propertyTypes?.map((option: string) => (
+              <Select placeholder="Select 3rd Type">
+                {properties?.map((option: string) => (
                   <Option key={option} value={option}>
                     {option}
                   </Option>
@@ -211,10 +208,6 @@ const PropertyInfoFrom = ({
           <Input placeholder="Enter listing title" />
         </Item>
 
-        <Item name="status" label="Status">
-          <Input placeholder="Enter status" />
-        </Item>
-
         {/* External Listing Link */}
         <Item
           name="externalListingLink"
@@ -245,4 +238,4 @@ const PropertyInfoFrom = ({
   );
 };
 
-export default PropertyInfoFrom;
+export default PropertyInfoForm;

@@ -8,10 +8,11 @@ export default function PropertiesCard() {
     <Link
       href={"/properties/home/12345"}
       className="overflow-hidden rounded-lg text-white bg-primary"
+      data-aos="fade-up" // Add AOS attribute for animation
     >
       <Image
         src={"/img.png"}
-        alt="blog"
+        alt="Property"
         width={300}
         height={250}
         className="h-[200px] w-full"
@@ -25,19 +26,19 @@ export default function PropertiesCard() {
         <div className="grid grid-cols-2">
           <div className="flex items-center gap-2 border-r-2 border-b-2 p-[6px]">
             <HomeSearchIcon className="text-xl text-black" />
-            <p className="text-sm">4 Bedsroom</p>
+            <p className="text-sm">4 Bedrooms</p> {/* Corrected spelling from "Bedsroom" to "Bedrooms" */}
           </div>
           <div className="flex items-center gap-2 border-b-2 p-[6px]">
             <HomeSearchIcon className="text-xl text-black" />
-            <p className="text-sm">4 Bedsroom</p>
+            <p className="text-sm">2 Bathrooms</p> {/* Changed for better variety */}
           </div>
           <div className="flex items-center gap-2 border-r-2 p-[6px]">
             <HomeSearchIcon className="text-xl text-black" />
-            <p className="text-sm">4 Bedsroom</p>
+            <p className="text-sm">1500 sqft</p> {/* Added property size */}
           </div>
           <div className="flex items-center gap-2 p-[6px]">
             <HomeSearchIcon className="text-xl text-black" />
-            <p className="text-sm">4 Bedsroom</p>
+            <p className="text-sm">Year Built: 2022</p> {/* Added year built */}
           </div>
         </div>
       </div>

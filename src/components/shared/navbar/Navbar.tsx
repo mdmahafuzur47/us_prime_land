@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "@/components/ui/Container";
 import TopNavBar from "./TopNavBar";
 import Image from "next/image";
@@ -6,6 +6,8 @@ import { navLinks } from "./navLinks";
 import Link from "next/link";
 import { DownArrow, MenuIcon } from "../icons/Icons";
 import SideBar from "./SideBar";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import the CSS for AOS animations
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,6 +15,15 @@ export default function Navbar() {
   const toggleMenu = () => {
     setOpen((prev) => !prev);
   };
+
+  // Initialize AOS when the component mounts
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      easing: 'ease-in-out', // Easing function
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
 
   return (
     <>
@@ -24,7 +35,10 @@ export default function Navbar() {
           <Container className="py-4 flex justify-between items-center">
             {/* logo section  */}
             <Link href={"/"}>
-              <div className="flex gap-2 items-center">
+              <div
+                className="flex gap-2 items-center"
+                data-aos="fade-right" // AOS animation for logo and title
+              >
                 <Image
                   src={"/logo.png"}
                   alt="Logo"
@@ -42,11 +56,14 @@ export default function Navbar() {
                 </div>
               </div>
             </Link>
-            <div className="flex items-center gap-5">
+            <div  data-aos="fade-left" className="flex items-center gap-5">
               <div className="hidden lg:block">
                 <ul className="flex gap-5 font-medium text-primary">
                   {navLinks?.map((navLink, i: number) => (
-                    <li key={i} className="relative group">
+                    <li
+                      key={i}
+                      className="relative group"
+                    >
                       <div className="flex items-center gap-[1px]">
                         <Link href={navLink?.path}>{navLink?.name}</Link>
                         {navLink?.children && (
@@ -74,13 +91,14 @@ export default function Navbar() {
               </div>
               <div className="flex items-center gap-5">
                 <Link href={"/contactUs"}>
-                <button className="bg-primary sm:block hidden px-7 py-1 rounded-2xl text-white">
-                  Contact Us
-                </button>
+                  <button className="bg-primary sm:block hidden px-7 py-1 rounded-2xl text-white">
+                    Contact Us
+                  </button>
                 </Link>
                 <div
                   onClick={toggleMenu}
                   className="border w-fit p-3 rounded-full text-2xl"
+                  data-aos="zoom-in" // AOS animation for menu icon
                 >
                   <MenuIcon />
                 </div>

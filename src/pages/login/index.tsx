@@ -20,7 +20,7 @@ const LoginPage = () => {
       if ("error" in res) {
         setError("Invalid email or password");
       } else {
-        router.push("admin/dashboard");
+        router.push("/admin/dashboard");
       }
     } catch (err) {
       console.log(err);
