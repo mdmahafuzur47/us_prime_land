@@ -5,7 +5,9 @@ import React from 'react';
 
 export default function BlogCard() {
   return (
-    <Link href={"/blogs&news/123456"} className='overflow-hidden rounded-lg text-white bg-myBlue transition-transform transform hover:scale-[102%]'>
+    <Link href={"/blogs&news/123456"} className='overflow-hidden rounded-lg text-white bg-myBlue transition-transform transform hover:scale-[102%]'
+    data-aos="fade-up"
+    >
       <Image 
         src={'/img.png'}
         alt="Blog post about recreational land usage"
