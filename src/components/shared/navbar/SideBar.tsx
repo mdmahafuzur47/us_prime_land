@@ -15,7 +15,7 @@ import {
 
 export default function SideBar({ close }: any) {
   return (
-    <section className="fixed z-20 top-0 right-0 max-w-[400px] overflow-auto h-screen  bg-white w-full">
+    <section className="fixed z-[999] top-0 right-0 max-w-[400px] overflow-auto h-screen  bg-white w-full">
       <div className="px-5 py-3 flex flex-col items-center">
         <div className="flex justify-end w-full px-5 py-3">
           <div

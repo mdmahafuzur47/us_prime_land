@@ -11,6 +11,7 @@ import "aos/dist/aos.css"; // Import the CSS for AOS animations
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setOpen((prev) => !prev);
@@ -25,13 +26,31 @@ export default function Navbar() {
     });
   }, []);
 
+    // Handle scroll event to toggle navbar fixed position
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 30) {
+          setIsScrolled(true); // Fix the navbar after scrolling 200px
+        } else {
+          setIsScrolled(false); // Reset navbar to normal
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+  
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+    
+
   return (
     <>
-      <nav className="">
+      <nav className="md:h-[128px]">
         {/* top navbar  */}
         <TopNavBar />
         {/* main navbar  */}
-        <div>
+        <div className={`${isScrolled ? "fixed top-0 z-[999] shadow-lg " : "translate-y-0"} bg-white w-full transition-all duration-300`}>
           <Container className="py-4 flex justify-between items-center">
             {/* logo section  */}
             <Link href={"/"}>
@@ -72,7 +91,7 @@ export default function Navbar() {
                       </div>
                       {/* children dropdown */}
                       {navLink?.children && (
-                        <ul className="absolute z-20 hidden group-hover:block w-[200px] bg-white rounded-b-md shadow pt-2">
+                        <ul className="absolute z-10 hidden group-hover:block w-[200px] bg-white rounded-b-md shadow pt-2">
                           {navLink?.children.map((child, index) => (
                             <li key={index}>
                               <Link
