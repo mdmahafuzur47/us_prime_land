@@ -21,7 +21,7 @@ export default function HeroSection() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="w-full px-2 relative h-[88vh] flex flex-col justify-center items-center"
+        className="w-full z-[-1] px-2 relative h-[88vh] flex flex-col justify-center items-center"
       >
         {/* wrapper  */}
         <div className="absolute w-full h-full bg-gradient-to-t from-[#ffffff] to-[#1111114b] to-50%" />

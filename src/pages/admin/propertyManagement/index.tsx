@@ -1,6 +1,6 @@
 // "use client";
 // import dynamic from "next/dynamic";
-import AddProperty from "@/components/pages/admin/property/AddProperty";
+import AddProperty from "@/components/pages/admin/PropertyManagement/AddProperty";
 import { Button } from "antd";
 import React, { useState } from "react";
 

@@ -21,28 +21,27 @@ export default function Navbar() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
-      easing: 'ease-in-out', // Easing function
+      easing: "ease-in-out", // Easing function
       once: true, // Whether animation should happen only once
     });
   }, []);
 
-    // Handle scroll event to toggle navbar fixed position
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.scrollY > 30) {
-          setIsScrolled(true); // Fix the navbar after scrolling 200px
-        } else {
-          setIsScrolled(false); // Reset navbar to normal
-        }
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-  
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
-    
+  // Handle scroll event to toggle navbar fixed position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setIsScrolled(true); // Fix the navbar after scrolling 200px
+      } else {
+        setIsScrolled(false); // Reset navbar to normal
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -50,7 +49,11 @@ export default function Navbar() {
         {/* top navbar  */}
         <TopNavBar />
         {/* main navbar  */}
-        <div className={`${isScrolled ? "fixed top-0 z-[999] shadow-lg " : "translate-y-0"} bg-white w-full transition-all duration-300`}>
+        <div
+          className={`${
+            isScrolled ? "fixed top-0 z-[999] shadow-lg " : "translate-y-0"
+          } bg-white w-full transition-all duration-300`}
+        >
           <Container className="py-4 flex justify-between items-center">
             {/* logo section  */}
             <Link href={"/"}>
@@ -75,14 +78,11 @@ export default function Navbar() {
                 </div>
               </div>
             </Link>
-            <div  data-aos="fade-left" className="flex items-center gap-5">
+            <div data-aos="fade-left" className="flex items-center gap-5">
               <div className="hidden lg:block">
                 <ul className="flex gap-5 font-medium text-primary">
                   {navLinks?.map((navLink, i: number) => (
-                    <li
-                      key={i}
-                      className="relative group"
-                    >
+                    <li key={i} className="relative group">
                       <div className="flex items-center gap-[1px]">
                         <Link href={navLink?.path}>{navLink?.name}</Link>
                         {navLink?.children && (
@@ -91,7 +91,7 @@ export default function Navbar() {
                       </div>
                       {/* children dropdown */}
                       {navLink?.children && (
-                        <ul className="absolute z-10 hidden group-hover:block w-[200px] bg-white rounded-b-md shadow pt-2">
+                        <ul className="absolute z-[999] hidden group-hover:block w-[200px] bg-white rounded-b-md shadow pt-2">
                           {navLink?.children.map((child, index) => (
                             <li key={index}>
                               <Link
@@ -127,7 +127,7 @@ export default function Navbar() {
         </div>
       </nav>
       {/* side bar navigation  */}
-      {open && <SideBar close={toggleMenu} />}
+      <SideBar open={open} close={toggleMenu} />
     </>
   );
 }
